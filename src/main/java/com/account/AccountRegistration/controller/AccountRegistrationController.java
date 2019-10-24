@@ -19,13 +19,20 @@ import com.account.AccountRegistration.dto.UserDetails;
 import com.account.AccountRegistration.entity.AccountRegistrationEntity;
 import com.account.AccountRegistration.service.AccountRegistrationService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 
 @RestController
 @RequestMapping("/account")
+@Api(value="Account Services", description = "Operation under account services")
 public class AccountRegistrationController {
 	
 	@Autowired
 	AccountRegistrationService accountRegistrationService;
+	
+	
+	
 	
 	private static final Log logger = LogFactory.getLog(AccountRegistrationController.class);
 	/**
@@ -33,6 +40,7 @@ public class AccountRegistrationController {
 	 * @param requestUserRegistration
 	 * @return
 	 */
+	@ApiOperation(value="Registering the new user")
 	@PostMapping(value = "/saveUser")
 	public String getUserRegistration(@RequestBody RequestUserRegistration requestUserRegistration) {
 		
@@ -50,7 +58,7 @@ public class AccountRegistrationController {
 	 * Fetching all the User 
 	 * @return list of all the User
 	 */
-	
+	@ApiOperation(value="Getting all the user list")
 	@GetMapping(value = "/getAllUser")
 	public List<AccountRegistrationEntity> getAllUser(){
 		logger.info("getAllUser starts");
@@ -71,7 +79,7 @@ public class AccountRegistrationController {
 	 * @param deleteUser
 	 * @return String
 	 */
-	
+	@ApiOperation(value="Deleting the user on the Id basis")
 	@DeleteMapping(value = "/deleteUser")
 	public String getDelete(@RequestBody DeleteUser deleteUser ) {
 		
@@ -84,6 +92,7 @@ public class AccountRegistrationController {
 	 * @param deleteUser
 	 * @return
 	 */
+	@ApiOperation(value="getting the user on the ID bases")
 	@GetMapping(value = "/getUserOnId")
 	public Optional<AccountRegistrationEntity> getUser(@RequestBody DeleteUser deleteUser ){
 		logger.info("getUserOnId starts");

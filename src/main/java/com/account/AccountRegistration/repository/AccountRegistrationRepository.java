@@ -16,5 +16,8 @@ public interface AccountRegistrationRepository extends JpaRepository<AccountRegi
 	@Query("DELETE FROM AccountRegistrationEntity e WHERE e.userId= :userId")
 	void deleteUser(String userId);
 	
-	Optional<AccountRegistrationEntity> findById(String userId);
+
+	
+	
+	
 }
