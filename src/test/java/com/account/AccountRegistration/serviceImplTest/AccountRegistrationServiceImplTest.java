@@ -34,12 +34,13 @@ public class AccountRegistrationServiceImplTest {
 		requestUserRegistration.setPassword("123");
 		requestUserRegistration.setUserId("12");
 		requestUserRegistration.setUserName("rohit");
+		requestUserRegistration.setEmailId("abc@gmail.com");
 		
 		AccountRegistrationEntity accountRegistrationEntity=new AccountRegistrationEntity();
 		accountRegistrationEntity.setPassword(requestUserRegistration.getPassword());
 		accountRegistrationEntity.setUserId(requestUserRegistration.getUserId());
 		accountRegistrationEntity.setUserName(requestUserRegistration.getUserName());
-		accountRegistrationEntity.setEmail(requestUserRegistration.getUserName()+"@gmail.com");
+		accountRegistrationEntity.setEmail(requestUserRegistration.getEmailId());
 		
 		
 		Mockito.when(accountRegistrationRepository.save(accountRegistrationEntity))

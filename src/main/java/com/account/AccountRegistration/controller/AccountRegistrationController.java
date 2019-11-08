@@ -60,7 +60,7 @@ public class AccountRegistrationController {
 	 */
 	@ApiOperation(value="Getting all the user list")
 	@GetMapping(value = "/getAllUser")
-	public List<AccountRegistrationEntity> getAllUser(){
+	public List<AccountRegistrationEntity> getAllUser() throws Exception{
 		logger.info("getAllUser starts");
 		
 		logger.info("getAllUser ends");
@@ -93,7 +93,7 @@ public class AccountRegistrationController {
 	 * @return
 	 */
 	@ApiOperation(value="getting the user on the ID bases")
-	@GetMapping(value = "/getUserOnId")
+	@PostMapping(value = "/getUserOnId")
 	public Optional<AccountRegistrationEntity> getUser(@RequestBody DeleteUser deleteUser ){
 		logger.info("getUserOnId starts");
 		

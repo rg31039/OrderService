@@ -33,7 +33,7 @@ public class AccountRegistrationServiceImpl implements AccountRegistrationServic
 		accountRegistrationEntity.setPassword(requestUserRegistration.getPassword());
 		accountRegistrationEntity.setUserId(requestUserRegistration.getUserId());  
 		accountRegistrationEntity.setUserName(requestUserRegistration.getUserName());
-		accountRegistrationEntity.setEmail(requestUserRegistration.getUserName()+"@gmail.com");
+		accountRegistrationEntity.setEmail(requestUserRegistration.getEmailId());
 		accountRegistrationRepository.save(accountRegistrationEntity);
 		logger.info("Service Ends");
 		return "record sucessfully entered";
